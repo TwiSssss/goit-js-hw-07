@@ -26,17 +26,9 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-
+let galleryHTML = '';
 images.forEach((imageData) => {
-    const lastItem = document.createElement("li");
-    const image = document.createElement("img");
-
-    image.src = imageData.url;
-    image.alt = imageData.alt;
-
-    lastItem.appendChild(image);
-    list.append(lastItem);
-
+  galleryHTML += `<li><img src="${imageData.url}" alt="${imageData.alt}"></li>`;
 });
-
+list.insertAdjacentHTML('beforeend', galleryHTML);
 console.log(list);

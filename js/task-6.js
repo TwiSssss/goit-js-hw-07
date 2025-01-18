@@ -13,14 +13,16 @@ function createBoxes() {
         return;
     }
     boxesCont.innerHTML = "";
+    const fragment = document.createDocumentFragment();
 
     for (let i = 0; i < amount; i++) {
         const divElem = document.createElement("div");
         divElem.style.width = `${30 + i * 10}px`;
         divElem.style.height = `${30 + i * 10}px`;
         divElem.style.backgroundColor = getRandomHexColor();
-        boxesCont.appendChild(divElem);
+        fragment.appendChild(divElem);
     }
+    boxesCont.appendChild(fragment);
     inputFild.value = "";
 }
 
